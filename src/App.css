@@ -1,0 +1,88 @@
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Container styling */
+.homediv {
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Add New Button */
+button.add-new {
+  margin: 0.1% 0.5%;
+  width: 10%;
+  height: 54px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.add-new:hover {
+  background-color: darkgreen;
+}
+
+/* Table Styling */
+.detailsdiv {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Employee Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Edit and Delete Buttons */
+.table-actions {
+  display: flex;
+  gap: 10px; /* Space between edit and delete buttons */
+}
+
+button.edit-btn {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.edit-btn:hover {
+  background-color: darkorange;
+}
+
+button.delete-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.delete-btn:hover {
+  background-color: darkred;
+}
