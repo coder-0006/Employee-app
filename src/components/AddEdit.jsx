@@ -48,7 +48,7 @@ const AddEdit = ({ initialData, handleClose, refreshData }) => {
       }
 
       handleClose();
-      refreshData(); // 🔥 Refresh the employee list to immediately show new data
+      refreshData(); //  Refresh the employee list to immediately show new data
     } catch (error) {
       console.error("Error saving employee data:", error);
     }

@@ -18,12 +18,12 @@ import AddEdit from './AddEdit';
 import Delete from './Delete'; // Import the Delete component
 
 const EmpDetails = () => {
-  const [data, setData] = useState([]); 
-  const [searchQuery, setSearchQuery] = useState('');
-  const [open, setOpen] = useState(false);
-  const [selectedRow, setSelectedRow] = useState(null);
-  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
-  const [employeeToDelete, setEmployeeToDelete] = useState(null);
+  const [data, setData] = useState([]); // Employee data
+  const [searchQuery, setSearchQuery] = useState(''); // Search term
+  const [open, setOpen] = useState(false); // Add/Edit dialog open state
+  const [selectedRow, setSelectedRow] = useState(null); // Employee being edited
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false); //Delete dialog open state
+  const [employeeToDelete, setEmployeeToDelete] = useState(null); //Employee being deleted
 
   useEffect(() => {
     const fetchData = async () => {
