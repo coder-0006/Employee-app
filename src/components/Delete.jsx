@@ -1,30 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import { Dialog, DialogTitle, DialogContent, DialogActions, Button } from '@mui/material';
 
-const Delete = ({ open, handleClose, id }) => {
+const Delete = ({ employeeId, handleClose, refreshData }) => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
   const handleDelete = async () => {
+    setLoading(true);
     try {
-      await axios.delete(`https://669b3f09276e45187d34eb4e.mockapi.io/api/v1/employee/${id}`);
-      handleClose(); // Close dialog after deletion
-    } catch (error) {
-      console.error('Error deleting employee:', error);
+      await axios.delete(`https://669b3f09276e45187d34eb4e.mockapi.io/api/v1/employee/${employeeId}`);
+      refreshData();  // To re-fetch the data after deletion
+      handleClose();  // Close the delete dialog
+    } catch (err) {
+      setError('Failed to delete employee.');
+      setLoading(false);
     }
   };
 
   return (
-    <Dialog open={open} onClose={handleClose}>
-      <DialogTitle>Confirm Deletion</DialogTitle>
-      <DialogContent>
-        <p>Are you sure you want to delete this employee?</p>
-      </DialogContent>
-      <DialogActions>
-        <Button onClick={handleClose}>Cancel</Button>
-        <Button onClick={handleDelete} color="error">
-          Delete
-        </Button>
-      </DialogActions>
-    </Dialog>
+    <div>
+      <h2>Are you sure you want to delete this employee?</h2>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+      <button className='delete-btn' onClick={handleDelete} disabled={loading}>
+        {loading ? 'Deleting...' : 'Yes, Delete'}
+      </button>
+      <button className='cancel-btn' onClick={handleClose}>Cancel</button>
+    </div>
   );
 };
 

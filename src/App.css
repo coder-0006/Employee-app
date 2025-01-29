@@ -17,8 +17,8 @@ body {
 button.add-new {
   margin: 0.1% 0.5%;
   width: 10%;
-  height: 54px;
-  background-color: green;
+  height: 52px;
+  background-color: rgb(108, 56, 228);
   color: white;
   border: none;
   border-radius: 5px;
@@ -55,34 +55,19 @@ th {
   color: white;
 }
 
-/* Edit and Delete Buttons */
-.table-actions {
-  display: flex;
-  gap: 10px; /* Space between edit and delete buttons */
-}
-
-button.edit-btn {
-  background-color: orange;
-  color: white;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button.edit-btn:hover {
-  background-color: darkorange;
-}
-
-button.delete-btn {
+.delete-btn{
+  height: 35px;
+  margin: 5px;
   background-color: red;
-  color: white;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 5px;
-  cursor: pointer;
+}
+.cancel-btn{
+  height: 35px;
+  margin: 5px;
+  background-color: #fff;
 }
 
-button.delete-btn:hover {
-  background-color: darkred;
-}
+
+
+
+
+
